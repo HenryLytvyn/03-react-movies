@@ -24,5 +24,6 @@ export default async function fetchMovies(
     `${url}?query=${userRequest}`,
     options
   );
+
   return response.data.results;
 }
