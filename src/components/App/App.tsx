@@ -33,13 +33,14 @@ export default function App() {
       setMovieCards([]);
 
       const moviesArr = await fetchMovies(data);
+
       if (!moviesArr) {
         return;
-      }
-      if (moviesArr.length === 0) {
+      } else if (moviesArr.length === 0) {
         toast.error("No movies found for your request.");
         return;
       }
+
       setMovieCards(moviesArr);
     } catch {
       setIsError(true);
